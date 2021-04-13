@@ -9,7 +9,7 @@ They are in ```/opt/ros/foxy/share/gazebo_plugins/worlds```.  The simple one is 
 gazebo --verbose gazebo_ros_camera_demo.world
 ```
 
-You should see gazebo start up and see a ball bouncing, along with a screen showing the ball bouncing.  The screen is showing the ball and that is also what is being streamed to ROS2.
+You should see gazebo start up and see a ball bouncing, along with a screen showing the ball bouncing.  The screen is showing the camera's view of the ball - this is being streamed to ROS2.
 
 ### Get a list of topics from ROS2:
 ```
