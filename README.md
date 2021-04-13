@@ -128,13 +128,14 @@ Wait a second, we are still working with bouncing balls in the sample world:
 ```
 python3 stream-ros2-camera.py /demo_cam camera1/image_raw
 ```
+Hopefully you get the idea of how much more useful this method can be.
 
 # The big gotcha with streaming camera data from Gazebo to Python through ROS2
 ## Warning: needless complaining
 
 None of the python tutorials I could find specified anything for the Quality of Service profile other than a queue of 10.  This queue setting means that your subscription is using the system default.  Looking at the rclpy documentation (https://docs.ros2.org/latest/api/rclpy/api/node.html) is not at all helpful in this regard.
 
-The ROS2 documentation is a little better, but you are unlikely to find it unless you have done a lot of research on ROS2.  If you go through all the tutorials in order, you will eventually get to one about dealing with lossy networks (https://docs.ros.org/en/foxy/Tutorials/Quality-of-Service.html).  I'm running everything on a single PC with no network involved, so why would I pay attention to a tutorial about lossy networks, right?  That tutorial leads you to a concept page about quality of service (https://docs.ros.org/en/foxy/Concepts/About-Quality-of-Service-Settings.html) which again, but you are thinking in terms of bad network connections so why bother?  Sorry, you need to set this.
+The ROS2 documentation is a little better, but you are unlikely to find it unless you have done a lot of research on ROS2.  If you go through all the tutorials in order, you will eventually get to one about dealing with lossy networks (https://docs.ros.org/en/foxy/Tutorials/Quality-of-Service.html).  I'm running everything on a single PC with no network involved, so why would I pay attention to a tutorial about lossy networks, right?  That tutorial leads you to a concept page about quality of service (https://docs.ros.org/en/foxy/Concepts/About-Quality-of-Service-Settings.html) but again, you are thinking in terms of bad network connections - why bother?  Sorry, you need to set this.
 
 If you leave the Quality of Service settings as the default in all the python examples you find, your program will probably just be permanently stuck in the ```_wait_for_ready_callbacks``` function.  Yuck.
 
