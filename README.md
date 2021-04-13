@@ -9,7 +9,7 @@ They are in ```/opt/ros/foxy/share/gazebo_plugins/worlds```.  The simple one is 
 gazebo --verbose gazebo_ros_camera_demo.world
 ```
 
-You should see gazebo start up and see a ball bouncing, along with a screen showing the ball bouncing.  The screen is showing the camera's view of the ball - this is being streamed to ROS2.
+You should see gazebo start up and see a ball bouncing, along with a screen showing the ball bouncing.  The screen is showing the camera's view of the ball - this is what is being streamed to ROS2.
 
 ### Get a list of topics from ROS2:
 ```
@@ -28,7 +28,7 @@ The output:
 The camera data is on the topic ```/demo_cam/camera1/image_raw``` and we can take a look at it to verify that it is really being streamed:
 
 ```
-/demo_cam/camera1/image_raw
+ros2 topic echo /demo_cam/camera1/image_raw
 ```
 The output:
 ```
