@@ -120,6 +120,12 @@ This becomes a problem if you want to do more advanced stuff, like have a lot of
 
 It turns out that you can map the namespace when initializing your Node in the python program: (https://docs.ros2.org/latest/api/rclpy/api/node.html).  Specify the robot name as the namespace in our (just slightly) more advanced example:
 ```
+python3 stream-ros2-camera.py /robot1 camera1/image_raw
+python3 stream-ros2-camera.py /robot2 camera1/image_raw
+python3 stream-ros2-camera.py /robot3 camera1/image_raw
+```
+Wait a second, we are still working with bouncing balls in the sample world:
+```
 python3 stream-ros2-camera.py /demo_cam camera1/image_raw
 ```
 
